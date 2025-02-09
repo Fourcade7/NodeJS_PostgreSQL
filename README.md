@@ -7,6 +7,9 @@
 
 
 
+
+
+
             
             datasource db {
               provider = "postgresql"
@@ -15,7 +18,13 @@
 
 
 
+
+
+
             DATABASE_URL="postgresql://user:password@localhost:5432/databasename"
+
+
+
 
 
 
@@ -25,6 +34,9 @@
               lastname  String
               createdAt DateTime @default(now())
             }
+
+
+            
 
 
             npx prisma migrate dev --name init

@@ -1,42 +1,39 @@
+        npm install prisma @prisma/client
+        npx prisma init
 
 
 
-
-            npm install prisma @prisma/client
-            npx prisma init
+install
 
 
-
-
-
-
-            
-            datasource db {
-              provider = "postgresql"
-              url      = env("DATABASE_URL")
-            }
+        
+        datasource db {
+          provider = "postgresql"
+          url      = env("DATABASE_URL")
+        }
 
 
 
+env file
+
+
+        DATABASE_URL="postgresql://user:password@localhost:5432/databasename"
 
 
 
-            DATABASE_URL="postgresql://user:password@localhost:5432/databasename"
+database model
+
+
+        model User {
+          id        Int      @id @default(autoincrement())
+          username  String
+          lastname  String
+          createdAt DateTime @default(now())
+        }
+
+
+   prisma init
 
 
 
-
-
-
-            model User {
-              id        Int      @id @default(autoincrement())
-              username  String
-              lastname  String
-              createdAt DateTime @default(now())
-            }
-
-
-            
-
-
-            npx prisma migrate dev --name init
+        npx prisma migrate dev --name init
